@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body data-ng-app="myApp">
+
+    <p>Root Source Variable: {{rootVar}}</p>
+
+<div 
+    data-ng-controller="myCtrl" 
+    data-ng-init="person={firstName:'John',lastName:'Doe'};names=['Nick','Julia','Ben']"
+    test-directive
+>
+  <p>First Name: <input style="background-color:{{myCol}}" type="text" data-ng-model="person.firstName"></p>
+  <p>Last Name: <input style="background-color:{{myCol}}" type="text" data-ng-model="person.lastName"></p>
+  <p ng-bind="name"></p>
+  <p>{{person.firstName + " " + person.lastName}}</p>
+  <p>expression: {{5 + 5}}</p>
+  <p>{{text}}</p>
+  <ul>
+      <li ng-repeat="x in names">{{x}}</li>
+  </ul>
+  <!-- <test-directive></test-directive> -->
+  
+    <form name="myForm">
+        Email:
+        <input type="email" name="myAddress" ng-model="email">
+        <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+        {{myForm.myAddress.$valid}}
+        {{myForm.myAddress.$dirty}}
+        {{myForm.myAddress.$touched}}
+    </form>
+</div>
+
+<script src="myApp.js"></script>
+<script src="myCtrl.js"></script>
+
+</body>
+</html>

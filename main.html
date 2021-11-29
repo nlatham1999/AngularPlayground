@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <p>Today's welcome message is:</p>
@@ -48,6 +49,22 @@
             <td ng-if="$even">{{ x.country }}</td>
         </tr>
     </table>
+
+    <form>
+        Check to show a header:
+        <input type="checkbox" ng-model="myVar">
+    </form>
+      
+    <h1 ng-show="myVar">My Header</h1>
+
+    <form>
+        Pick a topic:
+        <input type="radio" ng-model="myVar2" value="dogs">Dogs
+        <input type="radio" ng-model="myVar2" value="tuts">Tutorials
+        <input type="radio" ng-model="myVar2" value="cars">Cars
+    </form>
+
+    <div>{{myVar2}}</div>
 </div>
 
 <script src="myApp.js"></script>
